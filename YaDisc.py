@@ -1,6 +1,5 @@
 import requests
 import easygui
-from requests import put
 
 
 class YandexDisc:
