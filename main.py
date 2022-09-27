@@ -2,8 +2,8 @@ from apikey import QAuth_TOKEN
 import YaDisc
 import SuperHero
 from SuperHero import comparison_by_characteristics
-from StackExchange import get_questions_staroverflow
-from pprint import pprint
+from StackExchange import get_questions
+
 
 if __name__ == '__main__':
     hulk = SuperHero.SuperHero('Hulk')
@@ -16,5 +16,5 @@ if __name__ == '__main__':
     ya = YaDisc.YandexDisc(QAuth_TOKEN)
     YaDisc.uploads_file_disk(ya)  # метод для загрузки файла
 
-    questions_teg_python = get_questions_staroverflow('python')  # функция, позволяющая получить вопросы с тегом
-    pprint(questions_teg_python)
+    get_questions('python')  # функция, позволяющая получить вопросы с тегом
+

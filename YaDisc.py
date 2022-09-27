@@ -15,7 +15,12 @@ class YandexDisc:
         files_url = 'https://cloud-api.yandex.net/v1/disk/resources/files'
         headers = self._get_headers()
         response = requests.get(files_url, headers=headers)
-        return response.json()
+        files_info = response.json()
+        files_download = []
+        for files_name in files_info['items']:
+            files_download.append([files_name['name'], files_name['file']])
+        return files_download
+
 
     def get_meta_info_files(self, path):
         params = {'path': path}
